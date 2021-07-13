@@ -67,8 +67,7 @@ public class User {
 		this.name = name;
 		this.admin = admin;
 	}
-
-
+	
 
 	
 
@@ -77,8 +76,7 @@ public class User {
 	public String toString() {
 		return "User [id=" + id + ", email=" + email + ", password=" + password + ", resetPasswordSentAt="
 				+ resetPasswordSentAt + ", signinCount=" + signinCount + ", lastSignin=" + lastSignin + ", createdAt="
-				+ createdAt + ", updatedAt=" + updatedAt + ", name=" + name + ", admin=" + admin + ", contact="
-				+ contact + ", cart=" + cart + "]";
+				+ createdAt + ", updatedAt=" + updatedAt + ", name=" + name + ", admin=" + admin + "]";
 	}
 
 
