@@ -9,8 +9,8 @@
 <title>Products</title>
 </head>
 <body>
-
-<form:form >
+<a href ="${pageContext.request.contextPath }/user/cart" >CArt</a>
+<form:form method="Get"  >
 	<table >
 		<tr>
 			<th>Name </th>
@@ -20,19 +20,7 @@
 			<tr>
 			<td>${a.name }</td>
 			<td>${a.price }</td>
-			<td></td>
-			</tr>
-		</c:forEach>
-	</table>
-</form:form>
-<form:form>
-	<table >
-		<tr>
-			<th>Name </th>
-		</tr>
-		<c:forEach items="${ product}" var="a">
-			<tr>
-			<td>${a.subCategory.category.name }</td>
+			<td><a href="${pageContext.request.contextPath }/user/addToCart/${a.id}")>Add</a></td>
 			<td></td>
 			</tr>
 		</c:forEach>

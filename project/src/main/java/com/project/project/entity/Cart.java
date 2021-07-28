@@ -36,61 +36,43 @@ public class Cart {
 	@OneToMany(mappedBy="lineCart")
 	private List<LineItem> lineItem;
 
-	@Override
-	public String toString() {
-		return "Cart [id=" + id + ", subTotal=" + subTotal + ", shipingAmount=" + shipingAmount + ", cartUser="
-				+ cartUser + ", lineItem=" + lineItem + "]";
+	public int getId() {
+		return id;
 	}
-
-	
-
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getSubTotal() {
+		return subTotal;
+	}
+	public void setSubTotal(int subTotal) {
+		this.subTotal = subTotal;
+	}
+	public int getShipingAmount() {
+		return shipingAmount;
+	}
+	public void setShipingAmount(int shipingAmount) {
+		this.shipingAmount = shipingAmount;
+	}
+	public User getCartUser() {
+		return cartUser;
+	}
+	public void setCartUser(User cartUser) {
+		this.cartUser = cartUser;
+	}
+	public List<LineItem> getLineItem() {
+		return lineItem;
+	}
+	public void setLineItem(List<LineItem> lineItem) {
+		this.lineItem = lineItem;
+	}
 	public Cart(int subTotal, int shipingAmount) {
 		super();
 		this.subTotal = subTotal;
 		this.shipingAmount = shipingAmount;
 	}
-
-
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public int getSubTotal() {
-		return subTotal;
-	}
-
-	public void setSubTotal(int subTotal) {
-		this.subTotal = subTotal;
-	}
-
-	public int getShipingAmount() {
-		return shipingAmount;
-	}
-
-	public void setShipingAmount(int shipingAmount) {
-		this.shipingAmount = shipingAmount;
-	}
-
-	public User getCartUser() {
-		return cartUser;
-	}
-
-	public void setCartUser(User cartUser) {
-		this.cartUser = cartUser;
-	}
-
-	public List<LineItem> getLineItem() {
-		return lineItem;
-	}
-
-	public void setLineItem(List<LineItem> lineItem) {
-		this.lineItem = lineItem;
-	}
 	
+	
+
 	
 }

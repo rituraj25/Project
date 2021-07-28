@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.project.project.Dao.ProductDao;
 import com.project.project.Dao.Userdao;
+import com.project.project.entity.LineItem;
 import com.project.project.entity.Product;
 import com.project.project.entity.User;
 
@@ -22,6 +23,7 @@ public class HomeController {
 	
 	@Autowired 
 	ProductDao productdao;
+	
 	
 	@GetMapping ("/")
 	public ModelAndView validateUser() {
@@ -43,7 +45,9 @@ public class HomeController {
 			if (user1.getPassword().equals(user.getPassword())){
 				System.out.println("LogedIn");
 				List<Product>product= productdao.findAll();
+				LineItem item=new LineItem(); 
 				mv.addObject("product",product);
+				mv.addObject("line",item);
 				mv.setViewName("products");
 			}
 			else {

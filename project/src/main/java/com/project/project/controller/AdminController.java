@@ -15,9 +15,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.project.project.Dao.CategoryDao;
+import com.project.project.Dao.OrderDao;
 import com.project.project.Dao.ProductDao;
 import com.project.project.Dao.SubCategoryDao;
 import com.project.project.entity.Category;
+import com.project.project.entity.Order;
 import com.project.project.entity.Product;
 import com.project.project.entity.SubCategory;
 @Controller
@@ -32,6 +34,9 @@ public class AdminController {
 	
 	@Autowired
 	ProductDao productdao;
+	
+	@Autowired 
+	OrderDao orderDao;
 	
 	@GetMapping ("/try")
 	public String test() {
@@ -117,5 +122,14 @@ public class AdminController {
 		return getCategory(cat_id);
 
 	
+	}
+	
+	@GetMapping ("/orderView")
+	public ModelAndView  orderView() {
+		ModelAndView mv=new ModelAndView();
+		mv.setViewName("orderView");
+		List<Order> order=orderDao.findAll();
+		mv.addObject("order",order);
+		return mv;
 	}
 }
